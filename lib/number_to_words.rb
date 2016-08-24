@@ -41,7 +41,7 @@ module NumberToWords
               else
                 words << (groups[number].to_i > 1 ? "#{self.quantities[number]}ones" : "#{self.quantities[number]}ón")
               end
-              words << number_to_words(groups[number])
+              words << number_to_words(groups[number]) unless (number == 1 && groups[1] == '001') # skip 1XXX
             end
           end
 
